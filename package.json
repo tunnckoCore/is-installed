@@ -17,7 +17,17 @@
     "type": "git",
     "url": "git://github.com/tunnckoCore/is-installed.git"
   },
-  "keywords": [],
+  "keywords": [
+    "check",
+    "globally",
+    "installed",
+    "locally",
+    "npm",
+    "package",
+    "pkg",
+    "utils",
+    "validate"
+  ],
   "license": {
     "type": "MIT",
     "url": "https://github.com/tunnckoCore/is-installed/blob/master/license.md"
