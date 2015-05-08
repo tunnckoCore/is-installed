@@ -33,10 +33,10 @@
     "url": "https://github.com/tunnckoCore/is-installed/blob/master/license.md"
   },
   "dependencies": {
-    "detect-installed": "~1.0.0"
+    "detect-installed": "~1.0.3"
   },
   "devDependencies": {
     "assertit": "^0.1.0",
-    "istanbul-harmony": "~0.3.1"
+    "istanbul": "^0.3.9"
   }
 }
