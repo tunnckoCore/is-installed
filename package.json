@@ -1,6 +1,6 @@
 {
   "name": "is-installed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checks that given package is installed on the system - globally or locally.",
   "scripts": {
     "test": "standard && node test.js",
