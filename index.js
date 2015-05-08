@@ -5,10 +5,10 @@
  * Released under the MIT license.
  */
 
-'use strict';
+'use strict'
 
-var detectInstalled = require('detect-installed');
+var detectInstalled = require('detect-installed')
 
-module.exports = function isInstalled(name) {
-  return !detectInstalled(name) ? detectInstalled(name, true) : true;
-};
+module.exports = function isInstalled (name) {
+  return !detectInstalled(name) ? detectInstalled(name, true) : true
+}
