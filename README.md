@@ -4,7 +4,7 @@
 
 ## Install
 ```
-npm i is-installed --save
+npm install is-installed --save
 npm test
 ```
 
@@ -23,6 +23,12 @@ isInstalled('gulp')
 isInstalled('koa')
 //=> false
 ```
+
+## Related
+- [detect-installed](https://github.com/tunnckoCore/detect-installed): Checks that given package name is installed locally (in current… [more](https://github.com/tunnckoCore/detect-installed)
+- [hybridify](https://github.com/hybridables/hybridify): Building hybrid APIs. You can use both callback and promise… [more](https://github.com/hybridables/hybridify)
+- [is-missing](https://github.com/tunnckoCore/is-missing): Check that given `name` or `user/repo` exists in npm registry… [more](https://github.com/tunnckoCore/is-missing)
+- [jstransformer](https://github.com/jstransformers/jstransformer): Normalize the API of any jstransformer
 
 
 ## Author
