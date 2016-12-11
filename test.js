@@ -1,48 +1,36 @@
-/**
+/*!
  * is-installed <https://github.com/tunnckoCore/is-installed>
  *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
+ * Copyright (c) Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)
  * Released under the MIT license.
  */
 
+/* jshint asi:true */
+
 'use strict'
 
-var test = require('assertit')
-var isInstalled = require('./index')
+const test = require('mukla')
+const isInstalled = require('./index')
 
-test('is-installed:', function () {
-  test('should throw TypeError if not a string given', function (done) {
-    function fixture () {
-      isInstalled([1, 2, 3])
-    }
+test('async: should return true if exists locally or globally', () => {
+  return isInstalled('npm').then((exists) => {
+    test.strictEqual(exists, true)
+  })
+})
 
-    test.throws(fixture, /expect `name` to be string/)
-    test.throws(fixture, TypeError)
-    done()
+test('async: should return false if not exists', () => {
+  return isInstalled('sdfsf34f34-fdgdfjk345h345-sfsdf').then((actual) => {
+    test.strictEqual(actual, false)
   })
-  test('should throw Error if empty string given', function (done) {
-    function fixture () {
-      isInstalled('')
-    }
+})
 
-    test.throws(fixture, /expect `name` to be non empty string/)
-    test.throws(fixture, Error)
-    done()
-  })
-  test('should return true if package is installed globally', function (done) {
-    test.equal(isInstalled('npm'), true)
-    done()
-  })
-  test('should return false if package is not installed globally', function (done) {
-    test.equal(isInstalled('koa'), false)
-    done()
-  })
-  test('should return true if package is installed locally', function (done) {
-    test.equal(isInstalled('detect-installed'), true)
-    done()
-  })
-  test('should return false if package is not installed locally', function (done) {
-    test.equal(isInstalled('export-files'), false)
-    done()
-  })
+test('sync: should return true if exists on system', (done) => {
+  test.strictEqual(isInstalled.sync('npm'), true)
+  test.strictEqual(isInstalled.sync('detect-installed'), true)
+  done()
+})
+
+test('sync: should return false if not exists globally/locally', (done) => {
+  test.strictEqual(isInstalled.sync('sdakj34h5j34-fg4g54jk60-sasa'), false)
+  done()
 })

@@ -1,14 +1,20 @@
-/**
+/*!
  * is-installed <https://github.com/tunnckoCore/is-installed>
  *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
+ * Copyright (c) Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)
  * Released under the MIT license.
  */
 
 'use strict'
 
-var detectInstalled = require('detect-installed')
+const detect = require('detect-installed')
 
 module.exports = function isInstalled (name) {
-  return !detectInstalled(name) ? detectInstalled(name, true) : true
+  return detect(name, { local: true }).then((exists) => {
+    return exists || detect(name)
+  })
+}
+
+module.exports.sync = function isInstalledSync (name) {
+  return detect.sync(name, { local: true }) || detect.sync(name)
 }

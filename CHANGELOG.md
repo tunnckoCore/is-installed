@@ -1,16 +1,16 @@
 
 
-## v1.0.1 / May 9, 2015
+## 1.0.1 - 2015-05-09
 - Release v1.0.1 / npm@v1.0.1
 - add related section
 - run update
 - apply feross/standard
 - bump deps
 
-## v1.0.0 / April 18, 2015
+## 1.0.0 - 2015-04-18
 - Release v1.0.0 / npm@v1.0.0
 - run keywords(1)
 - bump deps
 
-## v0.0.0 / April 18, 2015
+## 0.0.0 - 2015-04-18
 - first commits
