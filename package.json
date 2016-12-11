@@ -91,7 +91,10 @@
       "once",
       "standard-version",
       "verb",
-      "verb-generate-readme"
+      "verb-generate-readme",
+      "detect-installed",
+      "global-modules",
+      "global-prefix"
     ],
     "lint": {
       "reflinks": true

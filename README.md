@@ -15,6 +15,8 @@ You might also be interested in [get-installed-path](https://github.com/tunnckoc
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
+  * [isInstalled](#isinstalled)
+  * [.sync](#sync)
 - [Related](#related)
 - [Contributing](#contributing)
 - [Building docs](#building-docs)
@@ -45,6 +47,53 @@ const isInstalled = require('is-installed')
 ```
 
 ## API
+
+### [isInstalled](index.js#L42)
+> Check if given `name` package is installed locally, then checks if it exists globally, using [detect-installed][] and so [global-modules][] (which in turn rely on [global-prefix][]). Windows bugs comes from [global-prefix][].
+
+**Params**
+
+* `name` **{String}**: package name    
+* `returns` **{Promise}**: resolved promise with boolean value  
+
+**Example**
+
+```js
+const isInstalled = require('is-installed')
+
+isInstalled('npm').then((exists) => {
+  console.log(exists) // => true
+})
+
+// installed locally for this package
+isInstalled('detect-installed').then((exists) => {
+  console.log(exists) // => true
+})
+
+isInstalled('foo-bar-baz-qux').then((exists) => {
+  console.log(exists) // => false
+})
+```
+
+### [.sync](index.js#L68)
+> Synchronously check if package `name` is installed.
+
+**Params**
+
+* `name` **{String}**: package name    
+* `returns` **{Boolean}**: always boolean `true` or `false`  
+
+**Example**
+
+```js
+const isInstalled = require('is-installed')
+
+const npmExists = isInstalled.sync('npm')
+console.log(npmExists) // => true
+
+const notExists = isInstalled.sync('foo-abra-fsddsfsd-fsdf')
+console.log(notExists) // => false
+```
 
 ## Related
 - [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
@@ -133,3 +182,6 @@ _Project scaffolded using [charlike][] cli._
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 
+[detect-installed]: https://github.com/tunnckocore/detect-installed
+[global-modules]: https://github.com/jonschlinkert/global-modules
+[global-prefix]: https://github.com/jonschlinkert/global-prefix
