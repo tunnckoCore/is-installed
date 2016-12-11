@@ -1,6 +1,6 @@
 {
   "name": "is-installed",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Checks that given package is installed locally or globally. Useful for robust resolving when you want some package - it will check first if it exists locally, then if it exists globally",
   "repository": "tunnckoCore/is-installed",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",
