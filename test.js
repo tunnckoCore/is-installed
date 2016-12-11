@@ -18,10 +18,13 @@ test('async: should return true if exists locally or globally', () => {
   })
 })
 
-test('async: should return false if not exists', () => {
-  return isInstalled('sdfsf34f34-fdgdfjk345h345-sfsdf').then((actual) => {
+test('async: should return false if not exists', (done) => {
+  const promise = isInstalled('sdfsf34f34-fdgdfjk345h345-sfsdf')
+
+  promise.then((actual) => {
     test.strictEqual(actual, false)
-  })
+    done()
+  }, done).catch(done)
 })
 
 test('sync: should return true if exists on system', (done) => {
